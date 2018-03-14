@@ -1,0 +1,17 @@
+@mixin main-header-after {
+  content: "";
+  position: absolute;
+  border-bottom: solid $main-orange;
+  width: 5rem;
+  top: 110%;
+  left: 50%;
+  margin-left: -2.5rem;
+}
+@mixin btn-main {
+  border-radius: 35px;
+  outline: none;
+  height: 3.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 2rem;
+}

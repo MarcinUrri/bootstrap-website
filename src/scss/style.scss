@@ -1,0 +1,191 @@
+@import 'variables';
+@import "mixins";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+body{
+    color: #fff;
+}
+
+// FULL SCREN SECTION
+.main-bar{
+  background-image: url(../img/bg-1.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .grey-opacity{
+    background-color: rgba(0,0,0,0.4);
+    height: 100vh;
+  }
+}
+// NAVIGATION SECTION
+.custom-brand{
+  color: $main-orange;
+  &:hover{
+    color: $main-orange;
+  }
+}
+.navbar-expand-lg{
+  transition: 0.5s all;
+}
+a{
+  color: $main-font-color;
+  font-weight: bold;
+  text-transform: uppercase;
+  &:hover{
+    color: #fff;
+  }
+}
+// BUTTONS
+.btn-orange{
+  background-color: $main-orange;
+  border-color: $main-orange;
+  @include btn-main;
+  &:hover{
+    background-color:  #ee4b28;
+    border-color: #ee4b28;
+}
+}
+.btn-white{
+  @include btn-main;
+  background-color: #fff;
+}
+
+// ICONS
+.fa-5x{
+  color: $main-orange;
+}
+// MAIN HEADER
+.main-header{
+  position: relative;
+  font-size: 200%;
+}
+.main-header::after{
+@include main-header-after;
+}
+
+// ORANGE SECTION
+.bg-orange{
+  background-color: $main-orange;
+  .main-header::after{
+    border-bottom:solid rgb(255, 255, 255);
+  }
+}
+
+
+// NAVIGATION ON SCROLL EFFECT
+.scrollNav{
+  background-color: #fff;
+  transition: 1s all;
+}
+.scrollNavLink{
+  color: #333;
+    &:hover{
+      color: $main-orange;
+    }
+}
+
+// PORTFOLIO HOVER EFFECT
+#portfolio{
+  .img-orange{
+    position: relative;
+    &:hover .overlay{
+        opacity: 0.9;
+    }
+     .overlay {
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       height: 100%;
+       width: 100%;
+       opacity: 0;
+       transition: .5s ease;
+       background-color: $main-orange;
+       .text {
+         color: white;
+         font-size: 20px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+         text-align: center;
+       }
+     }
+  }
+}
+
+@media screen and (max-width:992px){
+  .main-bar{
+    height: 80vh;
+  }
+  .navbar-expand-lg{
+    background-color: white;
+    overflow: hidden;
+    .navbar-brand{
+      color: $main-orange;
+    }
+    .navbar-toggler{
+          color: rgba(0,0,0,.5);
+          border: 1px solid grey;
+          outline: none;
+    }
+  a{
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    &:hover{
+      color:$main-orange;
+
+    }
+  }
+}
+}
+@media screen and (max-width:320px){
+  .main-bar{
+    height: 120vh;
+      .grey-opacity{
+          height: 120vh;
+      }
+  }
+  .main-text{
+    margin-top: 5rem;
+    h1{
+      margin: 0 1rem;
+    }
+    p{
+      margin: 0 1rem;
+      font-size: 1rem;
+    }
+  }
+  .bg-orange{
+    h3{
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: normal !important;
+      margin:0 2rem 3rem 2rem;
+    }
+    p{
+      margin: 0 1rem 1rem 1rem;
+    }
+  }
+  #services{
+    p{
+      margin-bottom: 5rem;
+    }
+  }
+  #download{
+    h3{
+      font-size: 2rem;
+    }
+  }
+  #contact{
+    h3{
+      margin: 0 2rem;
+    }
+    p{
+      margin: 2rem 2rem -2rem 2rem;
+      font-size: 1.2rem;
+    }
+  }
+}
